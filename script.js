@@ -37,7 +37,7 @@ setInterval(function() {
 
     if (window.scrollY > 0)
     {
-        document.getElementById('navBar').style = 'background:rgba(0,0,0,0.68);border-bottom:1px darkgrey solid;';
+        document.getElementById('navBar').style = 'background:rgba(0,0,0,0.68);';
     }else if (window.scrollY == 0)
      {
         document.getElementById('navBar').style = 'background:transparent;border-bottom:transparent;';
@@ -46,23 +46,23 @@ setInterval(function() {
 
 /* ===================================================================================== */
 
-var currentImage = 1;
+// var currentImage = 1;
 
-setInterval(function() {
+// setInterval(function() {
 
-    if (currentImage == 0)
-    {
-        document.querySelector('header').style = `background: url('Images/My Images/IMG_20181006_180118.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;`;
-        currentImage++;
-    }else if (currentImage == 1)
-     {
-        document.querySelector('header').style = `background: url('Images/My Images/PANO_20181008_175039.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;`;
-        currentImage++;
-     }
-     else if (currentImage == 2)
-     {
-         document.querySelector('header').style = `background: url('Images/My Images/IMG_20201023_170602.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;`
-         currentImage = 0;
-     }
-}, 5000);
+//     if (currentImage == 0)
+//     {
+//         document.querySelector('header').style = `background: url('Images/My Images/IMG_20181006_180118.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;`;
+//         currentImage++;
+//     }else if (currentImage == 1)
+//      {
+//         document.querySelector('header').style = `background: url('Images/My Images/PANO_20181008_175039.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;`;
+//         currentImage++;
+//      }
+//      else if (currentImage == 2)
+//      {
+//          document.querySelector('header').style = `background: url('Images/My Images/IMG_20201023_170602.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;`
+//          currentImage = 0;
+//      }
+// }, 5000);
 

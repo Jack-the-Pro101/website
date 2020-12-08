@@ -48,7 +48,6 @@ nav {
     left: 0;
     right: 0;
     background: transparent;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.01);
     transition-duration: 500ms;
     color: white;
     display: flex;
@@ -64,7 +63,7 @@ nav div {
     font-size: 24px;
     width: auto;
     display: inline-block;
-    transition-duration: 500ms;
+    transition-duration: 300ms;
 }
 
 nav div:hover {
@@ -91,6 +90,7 @@ header {
     background-repeat: no-repeat;
     background-attachment: fixed;
     position: relative;
+    animation: headerAnimation 16s infinite;
 }
 
 header p {
@@ -179,6 +179,20 @@ footer {
     height: 1000px;
 }
 
+/* ===================================================================================== 
+Images/My Images/IMG_20181006_180118.jpg Images/My Images/PANO_20181008_175039.jpg Images/My Images/IMG_20201023_170602.jpg Images/My Images/IMG_20200128_141154.jpg*/
+
+@keyframes headerAnimation {
+    0% {background: url('Images/My Images/IMG_20181006_180118.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;}
+    24.9% {background: url('Images/My Images/IMG_20181006_180118.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;}
+    25% {background: url('Images/My Images/PANO_20181008_175039.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;}
+    49.9% {background: url('Images/My Images/PANO_20181008_175039.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;}
+    50% {background: url('Images/My Images/IMG_20201023_170602.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;}
+    74.9% {background: url('Images/My Images/IMG_20201023_170602.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;}
+    75% {background: url('Images/My Images/IMG_20200128_141154.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;}
+    100% {background: url('Images/My Images/IMG_20200128_141154.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;}
+}
+
 /* ===================================================================================== */
 
 @media only screen and (max-width: 650px) {
@@ -191,6 +205,9 @@ footer {
     nav div {
         font-size: 16px;
         padding: 12px 24px;
+    }
+    nav div:hover {
+        font-size: 22px;
     }
     .about-section__item {
         width: 90%;
