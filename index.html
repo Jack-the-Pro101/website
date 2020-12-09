@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" id="DOM">
-<head>
+<head>    
+    <title>Jack's Website</title>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testinggs</title>
+    <meta name="author" content="Jack Huang (Emperor of Bluegaria)">
+    <meta name="description" content="The Official Webpage of Jack H.">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,15 +15,22 @@
     <nav id="navBar">
         <div>link</div>
         <div>link</div>
-        <div>link</div>
+        <div id="toAbout">About</div>
         <div>Link</div>
     </nav>
     <header>
         <h1>Jack's<br/>Website</h1>
         <p>Photos taken by me</p>
+        <div class="header-image-display-progress">
+            <span class="header-image-display-progress__dot" id="dot1"></span>
+            <span class="header-image-display-progress__dot" id="dot2"></span>
+            <span class="header-image-display-progress__dot" id="dot3"></span>
+            <span class="header-image-display-progress__dot" id="dot4"></span>
+        </div>
     </header>
 
     <main>
+        <h6 id="aboutSection"></h6>
         <section class="about-section">
             <div class="about-section__item about-section__about-me">
                 <h1>About me</h1>

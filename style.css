@@ -13,7 +13,8 @@
 }
 
 html {
-    background-color: #282c42
+    background-color: #282c42;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -55,7 +56,7 @@ nav {
     font-family: var(--font-main);
     -moz-user-select: none;
     -webkit-user-select: none;
-    z-index: 999;
+    z-index: 99;
 }
 
 nav div {
@@ -70,7 +71,12 @@ nav div:hover {
     cursor: pointer;
     font-size: 30px;
     color: gold;
-    background-color: rgba(206, 206, 206, 0.616);
+    background-color: rgba(219, 219, 219, 0.616);
+}
+
+nav div:active {
+    transition-duration: 100ms;
+    background-color: rgba(219, 219, 219, 0.89);
 }
 
 nav div:last-child {
@@ -78,31 +84,6 @@ nav div:last-child {
 }
 
 /* ===================================================================================== */
-
-header {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url('Images/My Images/IMG_20181006_180118.jpg');
-    background-position: bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    position: relative;
-    animation: headerAnimation 16s infinite;
-}
-
-header p {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    color: white;
-    font-size: 20px;
-    font-family: var(--font-main);
-    text-shadow: #1f2230 2px 2px 3px;
-    padding: 16px 16px;
-}
 
 #loadingCover {
     position: absolute;
@@ -121,10 +102,23 @@ header p {
     z-index: 99;
 }
 
+header {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('Images/HeaderAnimation/BayfrontPark.jpg');
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
 header h1 {
     color: white;
     font-family: var(--font-thin);
-    font-size: 80px;
+    font-size: 90px;
     transition-duration: 0.7s;
     letter-spacing: 12px;
     -moz-user-select: none;
@@ -132,20 +126,61 @@ header h1 {
     text-align: center;
     text-shadow: #1f2230 2px 2px 5px;
 }
+header p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+    font-size: 20px;
+    font-family: var(--font-main);
+    text-shadow: #1f2230 2px 2px 3px;
+    padding: 16px 16px;
+}
+
+.header-image-display-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+.header-image-display-progress__dot {
+    border-radius: 50%;
+    background-color: rgb(255, 150, 109);
+    height: 15px;
+    width: 15px;
+    margin: 0px 8px;
+    box-shadow: black 0px 0px 8px;
+    transition-duration: 1500ms;
+}
+
+.header-image-display-progress__dot:first-child {
+    background-color: rgb(255, 174, 0);
+    transition-duration: 1500ms;
+}
+
+
 /* ===================================================================================== */
+
+#aboutSection {
+    padding-bottom: 56px;
+}
 
 .about-section {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    margin-top: 64px;
     font-family: var(--font-main);
 }
 
 .about-section__item {
     background-color: #EAEBFB;
     width: 30%;
-    border-radius: 5px;
+    border-radius: 3px;
     transition-duration: 500ms;
     padding: 16px 24px 72px;
     overflow: hidden;
@@ -180,18 +215,8 @@ footer {
 }
 
 /* ===================================================================================== 
-Images/My Images/IMG_20181006_180118.jpg Images/My Images/PANO_20181008_175039.jpg Images/My Images/IMG_20201023_170602.jpg Images/My Images/IMG_20200128_141154.jpg*/
 
-@keyframes headerAnimation {
-    0% {background: url('Images/My Images/IMG_20181006_180118.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;}
-    24.9% {background: url('Images/My Images/IMG_20181006_180118.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;}
-    25% {background: url('Images/My Images/PANO_20181008_175039.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;}
-    49.9% {background: url('Images/My Images/PANO_20181008_175039.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;}
-    50% {background: url('Images/My Images/IMG_20201023_170602.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;}
-    74.9% {background: url('Images/My Images/IMG_20201023_170602.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;}
-    75% {background: url('Images/My Images/IMG_20200128_141154.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;}
-    100% {background: url('Images/My Images/IMG_20200128_141154.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;}
-}
+
 
 /* ===================================================================================== */
 
@@ -201,6 +226,13 @@ Images/My Images/IMG_20181006_180118.jpg Images/My Images/PANO_20181008_175039.j
     }
     header p {
         font-size: 10px;
+    }
+    .header-image-display-progress {
+        height: 50px;
+    }
+    .header-image-display-progress__dot {
+        width: 9px;
+        height: 9px;
     }
     nav div {
         font-size: 16px;

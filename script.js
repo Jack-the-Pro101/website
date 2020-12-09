@@ -46,23 +46,45 @@ setInterval(function() {
 
 /* ===================================================================================== */
 
-// var currentImage = 1;
+document.getElementById('toAbout').addEventListener('click',function(){
+    document.getElementById('aboutSection').scrollIntoView();
+})
 
-// setInterval(function() {
 
-//     if (currentImage == 0)
-//     {
-//         document.querySelector('header').style = `background: url('Images/My Images/IMG_20181006_180118.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;`;
-//         currentImage++;
-//     }else if (currentImage == 1)
-//      {
-//         document.querySelector('header').style = `background: url('Images/My Images/PANO_20181008_175039.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;`;
-//         currentImage++;
-//      }
-//      else if (currentImage == 2)
-//      {
-//          document.querySelector('header').style = `background: url('Images/My Images/IMG_20201023_170602.jpg');background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;`
-//          currentImage = 0;
-//      }
-// }, 5000);
+
+/* ===================================================================================== */
+
+var currentImage = 1;
+
+setInterval(function() {
+
+    if (currentImage == 0)
+    {
+        document.querySelector('header').style = `background: url('Images/HeaderAnimation/BayfrontPark.jpg'); background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;`;
+        document.getElementById('dot1').style.backgroundColor = 'rgb(255, 174, 0)';
+        document.getElementById('dot4').style.backgroundColor = 'white';
+        currentImage++;
+    }
+     else if (currentImage == 1)
+     {
+        document.querySelector('header').style = `background: url('Images/HeaderAnimation/DundasPeak.jpg'); background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;`;
+        document.getElementById('dot2').style.backgroundColor = 'rgb(255, 174, 0)';
+        document.getElementById('dot1').style.backgroundColor = 'white';
+        currentImage++;
+     }
+      else if (currentImage == 2)
+      {
+        document.querySelector('header').style = `background: url('Images/HeaderAnimation/ForestSunLeaves.jpg'); background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;`
+        document.getElementById('dot3').style.backgroundColor = 'rgb(255, 174, 0)';
+        document.getElementById('dot2').style.backgroundColor = 'white';
+        currentImage++;
+      }
+       else if (currentImage == 3)
+       {      
+        document.querySelector('header').style = `background: url('Images/HeaderAnimation/China1.jpg'); background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;`
+        document.getElementById('dot4').style.backgroundColor = 'rgb(255, 174, 0)';
+        document.getElementById('dot3').style.backgroundColor = 'white';
+        currentImage = 0;
+       }
+}, 4500);
 
