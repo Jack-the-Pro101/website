@@ -74,14 +74,14 @@ setInterval(function() {
      }
       else if (currentImage == 2)
       {
-        document.querySelector('header').style = `background: url('Images/HeaderAnimation/ForestSunLeaves.jpg'); background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;`
+        document.querySelector('header').style = `background: url('Images/HeaderAnimation/ForestSunLeaves.jpg'); background-position: right; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;`
         document.getElementById('dot3').style.backgroundColor = 'rgb(255, 174, 0)';
         document.getElementById('dot2').style.backgroundColor = 'white';
         currentImage++;
       }
        else if (currentImage == 3)
        {      
-        document.querySelector('header').style = `background: url('Images/HeaderAnimation/China1.jpg'); background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;`
+        document.querySelector('header').style = `background: url('Images/HeaderAnimation/China1.jpg'); background-position: left; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;`
         document.getElementById('dot4').style.backgroundColor = 'rgb(255, 174, 0)';
         document.getElementById('dot3').style.backgroundColor = 'white';
         currentImage = 0;
