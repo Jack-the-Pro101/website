@@ -9,6 +9,7 @@
     <meta name="description" content="The Official Webpage of Jack H.">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <noscript>
@@ -22,12 +23,27 @@
     </noscript>
 
     <div id="loadingCover">Loading Page...</div>
+
     <nav id="navBar">
-        <div>link</div>
-        <div>link</div>
-        <div id="toAbout">About</div>
-        <div>Link</div>
+        <div class="desktop-nav">
+            <div>Skills</div>
+            <div>Projects</div>
+            <div onclick="toAbout()">About</div>
+            <div class="">Link</div>
+        </div>
+        
+        <div class="phone-nav">
+            <div><i class="fa fa-bars"></i></div>
+        </div>
+        <div class="phone-nav__menu">
+            <div>Skills</div>
+            <div>Projects</div>
+            <div onclick="toAbout()">About</div>
+            <div class="">Link</div>
+        </div>
+        <span id="closePhoneNavMenu"></span>
     </nav>
+
     <header>
         <h1>Jack's<br/>Website</h1>
         <p>Photos taken by me</p>

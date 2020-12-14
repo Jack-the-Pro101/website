@@ -30,7 +30,7 @@ setTimeout(function() {
 
 setTimeout(function() {
     document.getElementById('loadingCover').style.zIndex = '-99'
-}, 1900);
+}, 1200);
 
 
 setInterval(function() {
@@ -46,11 +46,19 @@ setInterval(function() {
 
 /* ===================================================================================== */
 
-document.getElementById('toAbout').addEventListener('click',function(){
+function toAbout() 
+{
     document.getElementById('aboutSection').scrollIntoView();
+}
+
+document.querySelector('.phone-nav').addEventListener('click',function()
+{
+    document.querySelector('.phone-nav__menu').style = 'transform:translate(0px,0px); z-index:999; opacity:1;';
 })
-
-
+document.querySelector('#closePhoneNavMenu').addEventListener('click',function()
+{
+    document.querySelector('.phone-nav__menu').style = 'transform:translate(-4000px,0px); z-index:-999; opacity:0;';
+})
 
 /* ===================================================================================== */
 
