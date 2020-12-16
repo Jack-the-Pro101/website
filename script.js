@@ -57,7 +57,7 @@ document.querySelector('.phone-nav').addEventListener('click',function()
 })
 document.querySelector('#closePhoneNavMenu').addEventListener('click',function()
 {
-    document.querySelector('.phone-nav__menu').style = 'transform:translate(-4000px,0px); z-index:-999; opacity:0;';
+    document.querySelector('.phone-nav__menu').style = 'transform:translate(-2000px,0px); z-index:-999; opacity:0;';
 })
 
 /* ===================================================================================== */
