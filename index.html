@@ -1,144 +1,75 @@
 <!DOCTYPE html>
 <html lang="en" id="DOM">
-<head>
-    <title id="pageTitle">Crab Rave 2020 -> 2021</title>
+<head>    
+    <title>Jack's Website</title>
 
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Jack Huang (Emperor of Bluegaria)">
-    <meta name="description" content="End 2020 with style with an automatically synced Crab Rave beat drop! (2020 is gone!)">
-
-    <meta property="og:title" content="Crab Rave 2020 -> 2021">
-    <meta property="og:description" content="End 2020 with style with an automatically synced Crab Rave beat drop! (2020 is gone!)">
-    <meta property="og:image" content="https://raw.githubusercontent.com/Jack-the-Pro101/crabrave2020-2021/main/Assets/Images/CrabRave.jpg">
-    <meta property="og:url" content="https://jack-the-pro101.github.io/crabrave2020-2021/">
-    
-    <meta name="twitter:title" content="Crab Rave 2020 -> 2021">
-    <meta name="twitter:description" content="End 2020 with style with an automatically synced Crab Rave beat drop! (2020 is gone!)">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/Jack-the-Pro101/crabrave2020-2021/main/Assets/Images/CrabRave.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="description" content="The Official Webpage of Jack H.">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="Assets/Images/Favicon.jpg" type="image/png">
-    
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
-<body id="body">
+<body>
     <noscript>
-        <div class="noscript-bg">
-            <div class="noscript-box">
-                    <div class="noscript-text">
-                    <h5>You have JavaScript disabled on your browser!</h5>
-                    <p>
-                        This site REQUIRES JavaScript in order to run date and time calculations. Please enable JavaScript to use this site or 
-                        it will <strong>NOT</strong> function! Even the YouTube video needs JavaScript enabled to play!
-                        I will <strong>NEVER</strong> use JavaScript in a malicious fashion.
-                        Thank you for your understanding!
-                        <br/> 
-                        <br/>
-                        - Jack H. (Site author)
-                    </p>
-                </div>
+        <div class="noscript-overlay">
+            <div class="noscript-overlay__box">
+                <h1>You have JavaScript disabled!</h1>
+                <p>This site needs JavaScript to run correctly. Please enable JavaScript on this site. Thank you in advance!</p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png" alt="JavaScript logo">
             </div>
         </div>
     </noscript>
-    <div class="info-container" id="infoContainer">
-        <h1 style="margin: 0;">Info</h1>
-        <p class="countdown-texts" id="currentDateText" title="Your device's date">Current date here</p>
-    <br/>
-        <ul class="countdown-container">
-            <li class="countdown-item" id='monthsCountdownCont'>
-                <h3 class="countdown-item-text" id="monthsCountdown">
-                    XX
-                </h3>
-            </li>
-            <li class="countdown-item" id="daysCountdownCont">
-                <h3 class="countdown-item-text" id="daysCountdown">
-                    XX
-                </h3>
-            </li>
-            <li class="countdown-item" id="hoursCountdownCont">
-                <h3 class="countdown-item-text" id="hoursCountdown">
-                    XX
-                </h3>
-            </li>
-            <li class="countdown-item" id="minutesCountdownCont">
-                <h3 class="countdown-item-text" id="minutesCountdown">
-                    XX
-                </h3>
-            </li>
-            <li class="countdown-item" id="secondsCountdownCont">
-                <h3 class="countdown-item-text" id="secondsCountdown">
-                    XX
-                </h3>
-            </li>
-            <li class="countdown-item" id="millisecondsCoundownCont">
-                <h3 class="countdown-item-text" id="millisecondsCoundown">
-                    XX
-                </h3>
-            </li>
-        </ul>
-    <hr style="width: 90%; margin-top: 25px;"/>
-        <h4 id="IMPORTANT">
-            IMPORTANT: If this is not your first time visiting this website, please hard reload the page. On phone, use the 3 dots at the top right of the screen and press the reload button.
-            On computer, hold CTRL and press F5. This is to ensure that no cache with past code is left in the browser, NOT DOING THIS STEP COULD CAUSE THE WEBSITE TO FAIL! Thank you in advance.
-            <span onclick="document.getElementById('IMPORTANT').style.display='none'"><i class="fa fa-close"></i></span>
-        </h4>
-        <p class="countdown-texts" id="masterTimer"></p>
-        <p class="countdown-texts" id="yaytext"></p>
-    </div>
-    <div class="settings-button" role="button" id="settingsButton" title="Open settings">
-        <i class="fa fa-gear"></i>
-    </div>
-    <div class="settings-container" id="settingsContainer">
-        <div class="settings">
-            <i class="fa fa-close" id="closeSettings" title="Close settings"></i>
-            <h4>Settings</h4>
-            <div class="settings-theme">
-                <h6>Themes</h6>
-                <div class="default-theme" id="defaultTheme" role="button" name="Default theme selector" title="This theme is selected">
-                    <i class='fas fa-check' id="defaultThemeCheck"></i>
-                </div>
-                <div class="pink-theme" id="pinkTheme" role="button" name="Pink theme selector" title="Select theme">
-                    <i class='fas fa-check' id="pinkThemeCheck"></i>
-                </div>
-            </div>
-            <div class="advanced-settings">
-                <h6>Advanced Settings</h6>
-                <p>I don't know what to put here yet</p>
-            </div>
-        </div>
-    </div>
-    <div class="iframe-container">
-        <iframe id="video" width="896" height="504" 
-        src="//www.youtube.com/embed/cE0wfjsybIQ?enablejsapi=1"
-        frameborder="0" allowfullscreen>
-        </iframe>
-    </div>
-    <div class="about-container" id="aboutContainer">
-        <div class="about-container-text">
-        <h1>About</h1>
-        <h2>
-            Welcome! This site is a small project made by Jack H. to celebrate the ending of the year 2020. Since it wasn't the best year,
-            the meme of crab rave here will be "2020 is gone!" <i>Crabs start dancing</i>. I have used JavaScript to make the Crab Rave music video start
-            playing at an exact time so that when the beat drop hits, it will hit at 12:00AM. No other possible
-            human error is involved! There are only 3 simple steps to do: 1. Play the video, 2. Pause
-            the video and 3. drag the playhead to the beginning. Done! After this, keep the page open, sit back and relax! (Video demo under) The video will 
-            play on Dec. 31 at 11:58:44 PM.
-        </h2>
-        </div>
-        <div class="howto" title="How to set-up (Video demo)">
-            <video width="570" height="400" controls preload="auto" muted>
-                <source src="Assets/HowToSetup.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-          </video>
-        </div>
-        </div>
 
+    <div id="loadingCover">Loading Page...</div>
+
+    <nav id="navBar">
+        <div class="desktop-nav">
+            <div onclick="toSkills()">Skills</div>
+            <div onclick="toProjects()">Projects</div>
+            <div onclick="toAbout()">About</div>
+            <div class="">Link</div>
+        </div>
+        
+        <div class="phone-nav">
+            <div><i class="fa fa-bars"></i></div>
+        </div>
+        <div class="phone-nav__menu">
+            <div onclick="toSkills()">Skills</div>
+            <div onclick="toProjects()">Projects</div>
+            <div onclick="toAbout()">About</div>
+            <div class="">Link</div>
+        </div>
+        <span id="closePhoneNavMenu"></span>
+    </nav>
+
+    <header>
+        <h1>Jack's<br/>Website</h1>
+        <p>Photos taken by me</p>
+        <div class="header-image-display-progress">
+            <span class="header-image-display-progress__dot" id="dot1"></span>
+            <span class="header-image-display-progress__dot" id="dot2"></span>
+            <span class="header-image-display-progress__dot" id="dot3"></span>
+            <span class="header-image-display-progress__dot" id="dot4"></span>
+        </div>
+    </header>
+
+    <main>
+        <section class="skills-section">
+            <h6 id="skillsSection" class="spacer">Skills</h6>
+        </section>
+        <section class="projects-section">
+            <h6 id="projectsSection" class="spacer">Projects</h6>
+        </section>
+        <section class="about-section">
+            <h6 id="aboutSection" class="spacer">About</h6>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

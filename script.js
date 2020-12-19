@@ -1,227 +1,108 @@
-// https://developers.google.com/youtube/iframe_api_reference 
+'use strict';
 
-// global variable for the player
-var player;
+// let initDOM;
+// let comparedDOM;
 
-// this function gets called when API is ready to use
-function onYouTubePlayerAPIReady() {
-  // create the global player from the specific iframe (#video)
-  player = new YT.Player('video', {
-    events: {
-      // call this function when player is ready to use
-      'onReady': onPlayerReady
-    }
-  });
-}
+// setTimeout(function() 
+// {
+//     initDOM = document.getElementById('DOM').innerHTML;
+// }, 1000);
 
-function onPlayerReady(event) {
-  
-console.log('Crab Rave video has been successfully initilized');
-  
-}
+// let checkDOM = setInterval(() => {
+//     comparedDOM = document.getElementById('DOM').innerHTML;
 
-// Inject YouTube API script
-var tag = document.createElement('script');
-tag.src = "//www.youtube.com/player_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+//     if (comparedDOM !== initDOM)
+//     {
+//         document.write(`<h1 style="font-size:40px;text-align:center;">INVALID ACTION DETECTED: CONNECTION TERMINATED!</h1>`)
+//         clearInterval(checkDOM);
+//     }
+// }, 1100);
 
+/* ===================================================================================== */
 
+setTimeout(function() {
+    document.getElementById('loadingCover').style.background = 'transparent';
+}, 900);
 
-// Date and calulations of date and time
-let displayCurrentDate = document.getElementById('currentDateText');
-let countDownTimer = document.getElementById('timeUntilPlayText');
+setTimeout(function() {
+    document.getElementById('loadingCover').style.color = 'transparent';
+}, 900);
 
-let currentDate = new Date;
-
-var currentMonth = currentDate.getMonth();
-var currentDayOfMonth = currentDate.getDate();
-var currentHour = currentDate.getHours();
-var currentMinute = currentDate.getMinutes();
-var currentSecond = currentDate.getSeconds();
-var currentMilliSecond = currentDate.getMilliseconds();
-var parsedMilli;
+setTimeout(function() {
+    document.getElementById('loadingCover').style.zIndex = '-99'
+}, 1200);
 
 
-let yearCheck = currentDate.getFullYear();
-if (yearCheck > 2020)
-{
-  document.getElementById('pageTitle').innerHTML = '2020 is gone!';
-  document.getElementById('yaytext').innerHTML = '2020 is gone!';
-}
+setInterval(function() {
 
-
-let recheckDate = setInterval(function()
-{ 
-    currentDate = new Date;
-    displayCurrentDate.innerHTML = currentDate;
-
-    currentMonth = currentDate.getMonth();
-    currentDayOfMonth = currentDate.getDate();
-    currentHour = currentDate.getHours();
-    currentMinute = currentDate.getMinutes();
-    currentSecond = currentDate.getSeconds();
-    currentMilliSecond = currentDate.getMilliseconds();
-
-    document.getElementById('monthsCountdown').innerHTML = currentMonth + 1;
-    document.getElementById('daysCountdown').innerHTML = currentDayOfMonth;
-    document.getElementById('hoursCountdown').innerHTML = currentHour;
-    document.getElementById('minutesCountdown').innerHTML = currentMinute;
-    document.getElementById('secondsCountdown').innerHTML = currentSecond;
-
-    currentMilliSecond = currentMilliSecond / 10;
-    parsedMilli = parseInt(currentMilliSecond)
-    document.getElementById('millisecondsCoundown').innerHTML = parsedMilli;
-
-    currentMilliSecond = currentDate.getMilliseconds();
-
-    if (currentMonth == 11 && currentDayOfMonth == 18 && currentHour == 19 && currentMinute == 57 && currentSecond == 44 && currentMilliSecond > 0 && currentMilliSecond < 50)
+    if (window.scrollY > 0)
     {
-      masterTimer();
-    }
+        document.getElementById('navBar').style = 'background:rgba(0,0,0,0.68);';
+    }else if (window.scrollY == 0)
+     {
+        document.getElementById('navBar').style = 'background:transparent;border-bottom:transparent;';
+     }
+}, 500);
 
-    if (currentMonth == 11 && currentDayOfMonth == 18 && currentHour == 19 && currentMinute == 58 && currentSecond == 44 && currentMilliSecond > 850 && currentMilliSecond < 950)
-    {
-      initVideo();
-    }
+/* ===================================================================================== */
 
-    // if (currentMonth == 11 && currentDayOfMonth == 31 && currentHour == 23 && currentMinute == 57 && currentSecond == 44 && currentMilliSecond > 0 && currentMilliSecond < 50)
-    // {
-    //   masterTimer();
-    // }
-
-    // if (currentMonth == 11 && currentDayOfMonth == 31 && currentHour == 23 && currentMinute == 58 && currentSecond == 44 && currentMilliSecond > 850 && currentMilliSecond < 950)
-    // {
-    //   initVideo();
-    // }
-}, 25);
-
-function masterTimer()
+function toAbout() 
 {
-  var currentCountdown = 0;
-  var currentCountdownValue = 61 - currentCountdown;
-  var currentCountdownString = ' 61 seconds';
-  var masterTimer = setInterval(function()
-  {
-    currentCountdown++;
-    currentCountdownValue = 61 - currentCountdown;
-    currentCountdownString = currentCountdownValue + ' seconds';
-    document.getElementById('masterTimer').innerHTML = 'Time until video plays: ' + currentCountdownString;
-
-    if (currentCountdownValue == 0)
-    {
-      document.getElementById('masterTimer').innerHTML = 'Initiating video now...';
-    }
-    if (currentCountdownValue < 0) 
-    {
-      document.getElementById('masterTimer').style.display = 'none';
-    }
-  }, 1000);
-
-  document.getElementById('masterTimer').innerHTML = 'Time until video plays: ' + currentCountdownString;
-
-  return 'Master timer prematurely called by console';
+    document.getElementById('aboutSection').scrollIntoView();
+}
+function toProjects()
+{
+    document.getElementById('projectsSection').scrollIntoView();
+}
+function toSkills()
+{
+    document.getElementById('skillsSection').scrollIntoView();
 }
 
-function initVideo()
+
+
+document.querySelector('.phone-nav').addEventListener('click',function()
 {
-  player.playVideo();
-
-  document.getElementById('body').style = 'background-color: black;';
-
-  setTimeout(function()
-  {
-    document.getElementById('yaytext').innerHTML = '2020 is gone!';
-    document.getElementById('pageTitle').innerHTML = '- 2020 is gone! -';
-
-    initRGB();
-  },74900) // 117 seconds until end of song
-
-  return 'Video play prematurely called by console';
-}
-
-// OMEGA RGB background changer
-function initRGB() 
+    document.querySelector('.phone-nav__menu').style = 'transform:translate(0px,0px); z-index:999; opacity:1;';
+})
+document.querySelector('#closePhoneNavMenu').addEventListener('click',function()
 {
+    document.querySelector('.phone-nav__menu').style = 'transform:translate(-2000px,0px); z-index:-999; opacity:0;';
+})
 
-  document.getElementById('body').className = 'bodyRGB';
-  document.getElementById('body').style = '';
+/* ===================================================================================== */
 
-    document.getElementById('body').style.backgroundColor = 'red';
-    document.getElementById('yaytext').style.color = 'rgb(0,200,0)';
+var currentImage = 1;
 
-      setTimeout(function()
+setInterval(function() {
+
+    if (currentImage == 0)
+    {
+        document.querySelector('header').style = `background: url('Images/HeaderAnimation/BayfrontPark.jpg'); background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;`;
+        document.getElementById('dot1').style.backgroundColor = 'rgb(255, 174, 0)';
+        document.getElementById('dot4').style.backgroundColor = 'white';
+        currentImage++;
+    }
+     else if (currentImage == 1)
+     {
+        document.querySelector('header').style = `background: url('Images/HeaderAnimation/DundasPeak.jpg'); background-position: bottom; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;`;
+        document.getElementById('dot2').style.backgroundColor = 'rgb(255, 174, 0)';
+        document.getElementById('dot1').style.backgroundColor = 'white';
+        currentImage++;
+     }
+      else if (currentImage == 2)
       {
-        document.getElementById('body').style.backgroundColor = 'rgb(0,200,0)';
-        document.getElementById('yaytext').style.color = 'red';
-      },480)
+        document.querySelector('header').style = `background: url('Images/HeaderAnimation/ForestSunLeaves.jpg'); background-position: right; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;`
+        document.getElementById('dot3').style.backgroundColor = 'rgb(255, 174, 0)';
+        document.getElementById('dot2').style.backgroundColor = 'white';
+        currentImage++;
+      }
+       else if (currentImage == 3)
+       {      
+        document.querySelector('header').style = `background: url('Images/HeaderAnimation/China1.jpg'); background-position: left; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;`
+        document.getElementById('dot4').style.backgroundColor = 'rgb(255, 174, 0)';
+        document.getElementById('dot3').style.backgroundColor = 'white';
+        currentImage = 0;
+       }
+}, 4500);
 
-        setTimeout(function()
-        {
-          document.getElementById('body').style.backgroundColor = 'blue';
-          document.getElementById('yaytext').style.color = 'orange';
-        },960)
-
-          setTimeout(function()
-          {
-            initRGB();
-          },1440)
-  return 'RGB prematurely called by console';
-}
-
-// Change iframe to smaller if on smaller screen
-
-var windowWidth = window.innerWidth;
-
-if (windowWidth < 985) {
-  document.getElementById('video').width = '768';
-  document.getElementById('video').height = '432';
-}
-
-// Settings
-function closeSettings()
-{
-  document.getElementById('settingsContainer').style.display = 'none';
-}
-
-document.getElementById('settingsButton').addEventListener('click', function()
-{
-  document.getElementById('settingsContainer').style.display = 'block'
-});
-
-document.getElementById('closeSettings').addEventListener('click', function()
-{
-  closeSettings();
-});
-
-document.getElementById('defaultTheme').addEventListener('click', function()
-{
-  document.getElementById('infoContainer').style.backgroundColor = '#1E2656';
-  document.getElementById('aboutContainer').style.backgroundColor = '#1E2656';
-  document.getElementById('monthsCountdownCont').style.backgroundColor = '#8484A2';
-  document.getElementById('daysCountdownCont').style.backgroundColor = '#8484A2';
-  document.getElementById('hoursCountdownCont').style.backgroundColor = '#8484A2';
-  document.getElementById('minutesCountdownCont').style.backgroundColor = '#8484A2';
-  document.getElementById('secondsCountdownCont').style.backgroundColor = '#8484A2';
-  document.getElementById('millisecondsCoundownCont').style.backgroundColor = '#8484A2';
-  document.getElementById('defaultThemeCheck').style.display = 'block';
-  document.getElementById('pinkThemeCheck').style.display = 'none';
-  document.getElementById('defaultTheme').title = 'This theme is selected';
-  document.getElementById('pinkTheme').title = 'Select theme';
-})
-
-document.getElementById('pinkTheme').addEventListener('click', function()
-{
-  document.getElementById('infoContainer').style.backgroundColor = '#c56baf';
-  document.getElementById('aboutContainer').style.backgroundColor = '#c56baf';
-  document.getElementById('monthsCountdownCont').style.backgroundColor = '#d195c2';
-  document.getElementById('daysCountdownCont').style.backgroundColor = '#d195c2';
-  document.getElementById('hoursCountdownCont').style.backgroundColor = '#d195c2';
-  document.getElementById('minutesCountdownCont').style.backgroundColor = '#d195c2';
-  document.getElementById('secondsCountdownCont').style.backgroundColor = '#d195c2';
-  document.getElementById('millisecondsCoundownCont').style.backgroundColor = '#d195c2';
-  document.getElementById('defaultThemeCheck').style.display = 'none';
-  document.getElementById('pinkThemeCheck').style.display = 'block';
-  document.getElementById('pinkTheme').title = 'This theme is selected';
-  document.getElementById('defaultTheme').title = 'Select theme';
-})
